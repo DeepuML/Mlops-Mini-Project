@@ -1,0 +1,9 @@
+import mlflow
+import dagshub
+
+mlflow.set_tracking_uri("https://dagshub.com/DeepuML/Mlops-Mini-Project.mlflow")
+dagshub.init(repo_owner='DeepuML', repo_name='Mlops-Mini-Project', mlflow=True)
+
+with mlflow.start_run():
+  mlflow.log_param('parameter name', 'value')
+  mlflow.log_metric('metric name', 1)
